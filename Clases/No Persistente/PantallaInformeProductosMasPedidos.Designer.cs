@@ -557,6 +557,7 @@
             this.Name = "PantallaInformeProductosMasPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informe de productos mas pedidos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PantallaInformeProductosMasPedidos_Load);
             this.pnlSeleccionOpcion.ResumeLayout(false);
             this.pnlSeleccionOpcion.PerformLayout();

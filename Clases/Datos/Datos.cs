@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using Implementacion_PPAI.Clases.Dominio;
 using Implementacion_PPAI.Clases.No_Persistente;
 
@@ -123,9 +124,6 @@ namespace Implementacion_PPAI.Clases.Datos
             Producto spaghetti = new Producto(DateTime.Now.Date, "Spaghetti", 12f);
             Producto lasagna = new Producto(DateTime.Now.Date, "Lasagna", 12f);
 
-            ProductoDeCarta pc3 = new ProductoDeCarta(carnesRojasDeCarta, flanCafe);
-            ProductoDeCarta pc4 = new ProductoDeCarta(carnesBlancasDeCarta, flanCoco);
-
             ProductoDeCarta carneAsadaDeCarta = new ProductoDeCarta(carnesRojasDeCarta, carneAsada);
             ProductoDeCarta bifePimientaDeCarta = new ProductoDeCarta(carnesRojasDeCarta, bifePimienta);
             ProductoDeCarta polloHornoDeCarta = new ProductoDeCarta(carnesBlancasDeCarta, polloHorno);
@@ -135,6 +133,20 @@ namespace Implementacion_PPAI.Clases.Datos
             ProductoDeCarta spaghettiDeCarta = new ProductoDeCarta(pastasDeCarta, spaghetti);
             ProductoDeCarta lasagnaDeCarta = new ProductoDeCarta(pastasDeCarta, lasagna);
 
+
+            // PRODUCTOS PARA SALSAS
+
+            Producto mayonesa = new Producto(DateTime.Now.Date, "Mayonesa", 12f);
+            Producto jalapeño = new Producto(DateTime.Now.Date, "Jalapeño", 12f);
+            Producto vinagretaLimon = new Producto(DateTime.Now.Date, "Vinagreta de limon y albahaca", 12f);
+            Producto embotelladaCasera = new Producto(DateTime.Now.Date, "Embotellada casera", 12f);
+
+            ProductoDeCarta mayonesaCarta = new ProductoDeCarta(aderezosDeCarta, mayonesa);
+            ProductoDeCarta jalapeñodDeCarta = new ProductoDeCarta(picantesDeCarta, jalapeño);
+            ProductoDeCarta vinagretaDeCarta = new ProductoDeCarta(vinagretasDeCarta, vinagretaLimon);
+            ProductoDeCarta embotelladaCaserCarta = new ProductoDeCarta(embotelladasDeCarta, embotelladaCasera);
+
+            // CARTA
 
             Carta carta = new Carta(DateTime.Parse("16/07/2020"),
                 DateTime.Parse("20/07/2020"), DateTime.Parse("20/12/2020"),
@@ -172,17 +184,18 @@ namespace Implementacion_PPAI.Clases.Datos
             DetalleDePedido detalle10 = new DetalleDePedido(2, DateTime.UtcNow, 12f, tortaHeladaCarta);
             DetalleDePedido detalle11 = new DetalleDePedido(2, DateTime.UtcNow, 12f, lasagnaDeCarta);
             DetalleDePedido detalle12 = new DetalleDePedido(6, DateTime.UtcNow, 12f, flanCocoCarta);
-
+            DetalleDePedido detalle13 = new DetalleDePedido(1, DateTime.UtcNow, 12f, mayonesaCarta);
 
             List<DetalleDePedido> detallesPedido2 = new List<DetalleDePedido>();
-            detallesPedido1.Add(detalle7);
-            detallesPedido1.Add(detalle8);
-            detallesPedido1.Add(detalle9);
-            detallesPedido1.Add(detalle10);
-            detallesPedido1.Add(detalle11);
-            detallesPedido1.Add(detalle12);
+            detallesPedido2.Add(detalle7);
+            detallesPedido2.Add(detalle8);
+            detallesPedido2.Add(detalle9);
+            detallesPedido2.Add(detalle10);
+            detallesPedido2.Add(detalle11);
+            detallesPedido2.Add(detalle12);
+            detallesPedido2.Add(detalle13);
 
-            Pedido pedido2 = new Pedido(5, DateTime.Parse("02/07/2020"), 1, detallesPedido2);
+            Pedido pedido2 = new Pedido(5, DateTime.Parse("02/07/2020"), 2, detallesPedido2);
             _pedidos.Add(pedido2);
 
 

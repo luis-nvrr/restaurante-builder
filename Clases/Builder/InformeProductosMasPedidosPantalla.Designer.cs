@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,13 +40,13 @@
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grdCuerpo = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblFechaHora = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblFechaHora = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -103,7 +105,7 @@
             // 
             this.lblFechaHasta.AutoSize = true;
             this.lblFechaHasta.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblFechaHasta.Location = new System.Drawing.Point(378, 32);
+            this.lblFechaHasta.Location = new System.Drawing.Point(427, 32);
             this.lblFechaHasta.Name = "lblFechaHasta";
             this.lblFechaHasta.Size = new System.Drawing.Size(116, 21);
             this.lblFechaHasta.TabIndex = 14;
@@ -113,7 +115,7 @@
             // 
             this.lblFechaDesde.AutoSize = true;
             this.lblFechaDesde.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblFechaDesde.Location = new System.Drawing.Point(79, 32);
+            this.lblFechaDesde.Location = new System.Drawing.Point(36, 32);
             this.lblFechaDesde.Name = "lblFechaDesde";
             this.lblFechaDesde.Size = new System.Drawing.Size(119, 21);
             this.lblFechaDesde.TabIndex = 13;
@@ -125,7 +127,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(3, 164);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(772, 491);
+            this.groupBox2.Size = new System.Drawing.Size(772, 511);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuerpo";
@@ -136,6 +138,7 @@
             this.grdCuerpo.AllowUserToDeleteRows = false;
             this.grdCuerpo.AllowUserToResizeColumns = false;
             this.grdCuerpo.AllowUserToResizeRows = false;
+            this.grdCuerpo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grdCuerpo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(227)))), ((int)(((byte)(210)))));
             this.grdCuerpo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdCuerpo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -144,58 +147,30 @@
             this.Subcategoria,
             this.Producto,
             this.Total});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdCuerpo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdCuerpo.DefaultCellStyle = dataGridViewCellStyle4;
             this.grdCuerpo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(227)))), ((int)(((byte)(210)))));
-            this.grdCuerpo.Location = new System.Drawing.Point(54, 41);
+            this.grdCuerpo.Location = new System.Drawing.Point(40, 36);
             this.grdCuerpo.MultiSelect = false;
             this.grdCuerpo.Name = "grdCuerpo";
             this.grdCuerpo.ReadOnly = true;
             this.grdCuerpo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdCuerpo.Size = new System.Drawing.Size(677, 419);
+            this.grdCuerpo.ShowCellToolTips = false;
+            this.grdCuerpo.ShowEditingIcon = false;
+            this.grdCuerpo.Size = new System.Drawing.Size(693, 446);
             this.grdCuerpo.TabIndex = 1;
             this.grdCuerpo.SelectionChanged += new System.EventHandler(this.grdCuerpo_SelectionChanged);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lblFechaHora);
-            this.groupBox3.Controls.Add(this.lblUsuario);
-            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(3, 661);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(772, 62);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pie";
-            // 
-            // lblFechaHora
-            // 
-            this.lblFechaHora.AutoSize = true;
-            this.lblFechaHora.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.lblFechaHora.Location = new System.Drawing.Point(378, 32);
-            this.lblFechaHora.Name = "lblFechaHora";
-            this.lblFechaHora.Size = new System.Drawing.Size(109, 19);
-            this.lblFechaHora.TabIndex = 18;
-            this.lblFechaHora.Text = "Fecha y hora: ";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.lblUsuario.Location = new System.Drawing.Point(121, 32);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(66, 19);
-            this.lblUsuario.TabIndex = 17;
-            this.lblUsuario.Text = "Usuario: ";
-            // 
             // Categoria
             // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Categoria.DefaultCellStyle = dataGridViewCellStyle1;
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
@@ -203,10 +178,12 @@
             // 
             // Subcategoria
             // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Subcategoria.DefaultCellStyle = dataGridViewCellStyle2;
             this.Subcategoria.HeaderText = "Subcategoria";
             this.Subcategoria.Name = "Subcategoria";
             this.Subcategoria.ReadOnly = true;
-            this.Subcategoria.Width = 170;
+            this.Subcategoria.Width = 190;
             // 
             // Producto
             // 
@@ -217,11 +194,43 @@
             // 
             // Total
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle3;
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblFechaHora);
+            this.groupBox3.Controls.Add(this.lblUsuario);
+            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(3, 681);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(772, 62);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pie";
+            // 
+            // lblFechaHora
+            // 
+            this.lblFechaHora.AutoSize = true;
+            this.lblFechaHora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHora.Location = new System.Drawing.Point(424, 38);
+            this.lblFechaHora.Name = "lblFechaHora";
+            this.lblFechaHora.Size = new System.Drawing.Size(119, 21);
+            this.lblFechaHora.TabIndex = 18;
+            this.lblFechaHora.Text = "Fecha y hora: ";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(36, 32);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(74, 21);
+            this.lblUsuario.TabIndex = 17;
+            this.lblUsuario.Text = "Usuario: ";
             // 
             // InformeProductosMasPedidosPantalla
             // 
@@ -229,7 +238,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 574);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "InformeProductosMasPedidosPantalla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InformeProductosMasPedidosPantalla";
