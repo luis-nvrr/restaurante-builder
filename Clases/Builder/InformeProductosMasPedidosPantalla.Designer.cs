@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,13 +41,13 @@
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grdCuerpo = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblFechaHora = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblFechaHora = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -71,7 +72,9 @@
             // 
             // pnlTitulo
             // 
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(50)))), ((int)(((byte)(68)))));
             this.pnlTitulo.Controls.Add(this.label3);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlTitulo.Location = new System.Drawing.Point(3, 3);
             this.pnlTitulo.Name = "pnlTitulo";
@@ -82,7 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label3.Location = new System.Drawing.Point(211, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(332, 23);
@@ -99,25 +102,25 @@
             this.groupBox1.Size = new System.Drawing.Size(772, 69);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Encabezado";
+            this.groupBox1.Text = "Periodo";
             // 
             // lblFechaHasta
             // 
             this.lblFechaHasta.AutoSize = true;
-            this.lblFechaHasta.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblFechaHasta.Location = new System.Drawing.Point(427, 32);
+            this.lblFechaHasta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFechaHasta.Location = new System.Drawing.Point(514, 32);
             this.lblFechaHasta.Name = "lblFechaHasta";
-            this.lblFechaHasta.Size = new System.Drawing.Size(116, 21);
+            this.lblFechaHasta.Size = new System.Drawing.Size(112, 19);
             this.lblFechaHasta.TabIndex = 14;
             this.lblFechaHasta.Text = "Fecha hasta: ";
             // 
             // lblFechaDesde
             // 
             this.lblFechaDesde.AutoSize = true;
-            this.lblFechaDesde.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblFechaDesde.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.lblFechaDesde.Location = new System.Drawing.Point(36, 32);
             this.lblFechaDesde.Name = "lblFechaDesde";
-            this.lblFechaDesde.Size = new System.Drawing.Size(119, 21);
+            this.lblFechaDesde.Size = new System.Drawing.Size(118, 19);
             this.lblFechaDesde.TabIndex = 13;
             this.lblFechaDesde.Text = "Fecha desde: ";
             // 
@@ -130,7 +133,7 @@
             this.groupBox2.Size = new System.Drawing.Size(772, 511);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cuerpo";
+            this.groupBox2.Text = "Totales Agrupados";
             // 
             // grdCuerpo
             // 
@@ -147,14 +150,14 @@
             this.Subcategoria,
             this.Producto,
             this.Total});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdCuerpo.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle65.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle65.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdCuerpo.DefaultCellStyle = dataGridViewCellStyle65;
             this.grdCuerpo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(227)))), ((int)(((byte)(210)))));
             this.grdCuerpo.Location = new System.Drawing.Point(40, 36);
             this.grdCuerpo.MultiSelect = false;
@@ -167,39 +170,6 @@
             this.grdCuerpo.TabIndex = 1;
             this.grdCuerpo.SelectionChanged += new System.EventHandler(this.grdCuerpo_SelectionChanged);
             // 
-            // Categoria
-            // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Categoria.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 170;
-            // 
-            // Subcategoria
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subcategoria.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Subcategoria.HeaderText = "Subcategoria";
-            this.Subcategoria.Name = "Subcategoria";
-            this.Subcategoria.ReadOnly = true;
-            this.Subcategoria.Width = 190;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 170;
-            // 
-            // Total
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lblFechaHora);
@@ -210,27 +180,65 @@
             this.groupBox3.Size = new System.Drawing.Size(772, 62);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pie";
+            this.groupBox3.Text = "Datos de Emisión";
             // 
             // lblFechaHora
             // 
             this.lblFechaHora.AutoSize = true;
-            this.lblFechaHora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaHora.Location = new System.Drawing.Point(424, 38);
+            this.lblFechaHora.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHora.Location = new System.Drawing.Point(458, 32);
             this.lblFechaHora.Name = "lblFechaHora";
-            this.lblFechaHora.Size = new System.Drawing.Size(119, 21);
+            this.lblFechaHora.Size = new System.Drawing.Size(119, 19);
             this.lblFechaHora.TabIndex = 18;
             this.lblFechaHora.Text = "Fecha y hora: ";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(36, 32);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(74, 21);
+            this.lblUsuario.Size = new System.Drawing.Size(73, 19);
             this.lblUsuario.TabIndex = 17;
             this.lblUsuario.Text = "Usuario: ";
+            // 
+            // Categoria
+            // 
+            dataGridViewCellStyle61.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.White;
+            this.Categoria.DefaultCellStyle = dataGridViewCellStyle61;
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 170;
+            // 
+            // Subcategoria
+            // 
+            dataGridViewCellStyle62.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.White;
+            this.Subcategoria.DefaultCellStyle = dataGridViewCellStyle62;
+            this.Subcategoria.HeaderText = "Subcategoria";
+            this.Subcategoria.Name = "Subcategoria";
+            this.Subcategoria.ReadOnly = true;
+            this.Subcategoria.Width = 190;
+            // 
+            // Producto
+            // 
+            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.White;
+            this.Producto.DefaultCellStyle = dataGridViewCellStyle63;
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            this.Producto.Width = 170;
+            // 
+            // Total
+            // 
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.Color.White;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle64;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // InformeProductosMasPedidosPantalla
             // 

@@ -62,6 +62,7 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             pckFechaDesde.Enabled = false;
             pckFechaHasta.Enabled = false;
             btnSeleccionarPeriodo.Enabled = false;
+
             listaSubCategorias.Items.Clear();
             listaCategorias.Items.Clear();
 
@@ -70,29 +71,22 @@ namespace Implementacion_PPAI.Clases.No_Persistente
                 listaCategorias.Items.Add(categorias[i]);
                 listaCategorias.SetItemCheckState(i,CheckState.Checked);
             }
-            listaCategorias.Enabled = true;
         }
 
 
         public void MostrarSubCategoriasDeCartaParaSeleccionar(List<String> subcategorias)
         {
-            listaCategorias.Enabled = false;
-
             listaSubCategorias.Items.Clear();   
             for (int i = 0; i < subcategorias.Count; i++)
             {
                 listaSubCategorias.Items.Add(subcategorias[i].Split('|')[1]);
                 listaSubCategorias.SetItemCheckState(listaSubCategorias.Items.IndexOf(subcategorias[i].Split('|')[1]), CheckState.Checked);
             }
-
-            listaSubCategorias.Enabled = true;
         }
 
 
         public void SolicitarSeleccionOpcionParaOrdenar()
         {
-            listaSubCategorias.Enabled = false;
-
             pnlSeleccionOpcion.Enabled = true;
             btnSeleccionarOpcion.Enabled = true;
         }
@@ -135,10 +129,6 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             pckFechaDesde.Enabled = false;
             pckFechaHasta.Enabled = false;
             btnSeleccionarPeriodo.Enabled = false;
-
-            listaCategorias.Enabled = false;
-
-            listaSubCategorias.Enabled = false;
 
             pnlSeleccionOpcion.Enabled = false;
             btnSeleccionarOpcion.Enabled = false;
