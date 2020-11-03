@@ -163,7 +163,7 @@
             this.grdCuerpo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdCuerpo.ShowCellToolTips = false;
             this.grdCuerpo.ShowEditingIcon = false;
-            this.grdCuerpo.Size = new System.Drawing.Size(693, 446);
+            this.grdCuerpo.Size = new System.Drawing.Size(686, 446);
             this.grdCuerpo.TabIndex = 1;
             this.grdCuerpo.SelectionChanged += new System.EventHandler(this.grdCuerpo_SelectionChanged);
             // 
@@ -239,7 +239,7 @@
             this.ClientSize = new System.Drawing.Size(796, 574);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "InformeProductosMasPedidosPantalla";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "InformeProductosMasPedidosPantalla";
             this.Load += new System.EventHandler(this.InformeProductosMasPedidosPantalla_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

@@ -30,6 +30,12 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             pckFechaDesde.Value = DateTime.Parse("01/01/2020");
         }
 
+        private void btnGenerarReporte_Click(object sender, EventArgs e)
+        {
+            this.HabilitarPantalla();
+            _gestor.NuevoInformeProducto();
+        }
+
         public void SolicitarSeleccionPeriodo()
         {
             pckFechaDesde.Enabled = true;
@@ -56,33 +62,21 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             pckFechaDesde.Enabled = false;
             pckFechaHasta.Enabled = false;
             btnSeleccionarPeriodo.Enabled = false;
-
             listaSubCategorias.Items.Clear();
             listaCategorias.Items.Clear();
+
             for (int i = 0; i < categorias.Count; i++)
             {
                 listaCategorias.Items.Add(categorias[i]);
                 listaCategorias.SetItemCheckState(i,CheckState.Checked);
             }
-
             listaCategorias.Enabled = true;
-            btnSeleccionarCategorias.Enabled = true;
         }
 
-        private void btnSeleccionarCategorias_Click(object sender, EventArgs e)
-        {
-            String[] temp = new string[listaCategorias.CheckedItems.Count];
-            listaCategorias.CheckedItems.CopyTo(temp, 0);
-            _categoriasDeCartaSeleccionadas.AddRange(temp.ToList());
-
-            _gestor.TomarSeleccionCategorias(_categoriasDeCartaSeleccionadas);
-            listaCategorias.Enabled = false;
-        }
 
         public void MostrarSubCategoriasDeCartaParaSeleccionar(List<String> subcategorias)
         {
             listaCategorias.Enabled = false;
-            btnSeleccionarCategorias.Enabled = false;
 
             listaSubCategorias.Items.Clear();   
             for (int i = 0; i < subcategorias.Count; i++)
@@ -92,21 +86,12 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             }
 
             listaSubCategorias.Enabled = true;
-            btnSeleccionarSubCategorias.Enabled = true;
         }
 
-        private void btnSeleccionarSubCategorias_Click(object sender, EventArgs e)
-        {
-            String[] temp = new string[listaSubCategorias.CheckedItems.Count];
-            listaSubCategorias.CheckedItems.CopyTo(temp,0);
-            _subcategoriasDeCartaSeleccionadas.AddRange(temp.ToList());
-            _gestor.TomarSeleccionSubCategorias(_subcategoriasDeCartaSeleccionadas);
-        }
 
         public void SolicitarSeleccionOpcionParaOrdenar()
         {
             listaSubCategorias.Enabled = false;
-            btnSeleccionarSubCategorias.Enabled = false;
 
             pnlSeleccionOpcion.Enabled = true;
             btnSeleccionarOpcion.Enabled = true;
@@ -143,11 +128,7 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             }
         }
 
-        private void btnGenerarReporte_Click(object sender, EventArgs e)
-        {
-            this.HabilitarPantalla();
-            _gestor.NuevoInformeProducto();
-        }
+        
 
         private void DeshabilitarPaneles()
         {
@@ -156,10 +137,8 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             btnSeleccionarPeriodo.Enabled = false;
 
             listaCategorias.Enabled = false;
-            btnSeleccionarCategorias.Enabled = false;
 
             listaSubCategorias.Enabled = false;
-            btnSeleccionarSubCategorias.Enabled = false;
 
             pnlSeleccionOpcion.Enabled = false;
             btnSeleccionarOpcion.Enabled = false;

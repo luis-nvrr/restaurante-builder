@@ -24,19 +24,15 @@ namespace Implementacion_PPAI.Clases.No_Persistente
         private List<Carta> _cartasVigentes;
 
         private List<String> _categoriasDeCarta;
-        private List<String> _categoriasDeCartaSeleccionadas;
-        
         private List<String> _subcategoriasDeCarta;
-        private List<String> _subcategoriasDeCartaSeleccionadas;
 
         private List<String> _nombreProductos;
         private List<String> _productosPedidos;
         private List<int> _totalesPorProducto;
 
-        //private List<List<String>> _productosDeCategorias;
+        private List<List<String>> _productosDeCategorias;
         private List<int> _totalesPorCategorias;
-
-        //private List<List<String>> _productosDeSubcategorias;
+        private List<List<String>> _productosDeSubcategorias;
         private List<int> _totalesPorSubcategorias;
 
         private String _usuario;
@@ -54,7 +50,6 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             this._cartasVigentes = new List<Carta>();
             
             this._categoriasDeCarta = new List<String> ();
-            this._categoriasDeCartaSeleccionadas = new List<string>();
 
             this._subcategoriasDeCarta = new List<string>();
 
@@ -63,13 +58,7 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 
         public void NuevoInformeProducto()
         {
-            
             _pantalla.SolicitarSeleccionPeriodo();
-        }
-
-        public void TomarFechaHoraActual()
-        {
-            _fechaHoraActual = DateTime.Now;
         }
 
         public void TomarPeriodo(DateTime fechaDesde, DateTime fechaHasta)
@@ -78,13 +67,21 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             {
                 this._fechaDesde = fechaDesde;
                 this._fechaHasta = fechaHasta;
+
                 this.BuscarCategoriasDeCartaVigentesEnPeriodo();
-                _pantalla.MostrarCategoriasDeCartaParaSeleccionar(_categoriasDeCarta);
+                this.BuscarSubCategoriasDeCategoriasSeleccionadas();
+                this.ObtenerOpcionesParaOrdenar();
+
             }
             else
             {
                 _pantalla.EmitirErrorPeriodo();
             }
+        }
+
+        public void TomarFechaHoraActual()
+        {
+            _fechaHoraActual = DateTime.Now;
         }
 
         public Boolean ValidarPeriodo(DateTime fechaDesde, DateTime fechaHasta)
@@ -111,16 +108,9 @@ namespace Implementacion_PPAI.Clases.No_Persistente
                 }
             }
             this._categoriasDeCarta = res;
+            _pantalla.MostrarCategoriasDeCartaParaSeleccionar(_categoriasDeCarta);
         }
 
-
-        public void TomarSeleccionCategorias(List<String> categorias)
-        {
-            //categoriasDeCartaSeleccionadas = categorias;
-            this._categoriasDeCartaSeleccionadas = this._categoriasDeCarta;
-            BuscarSubCategoriasDeCategoriasSeleccionadas();
-            _pantalla.MostrarSubCategoriasDeCartaParaSeleccionar(_subcategoriasDeCarta);
-        }
 
         public void BuscarSubCategoriasDeCategoriasSeleccionadas()
         {
@@ -131,15 +121,10 @@ namespace Implementacion_PPAI.Clases.No_Persistente
                 res.AddRange(carta.MostrarSubCategorias());
             }
             this._subcategoriasDeCarta = res;
+
+            _pantalla.MostrarSubCategoriasDeCartaParaSeleccionar(_subcategoriasDeCarta);
         }
 
-        public void TomarSeleccionSubCategorias(List<String> subcategorias)
-        {
-            //this.subcategoriasDeCartaSeleccionadas = subcategorias;
-            //obtenerOpcionesParaOrdenar();
-            this._subcategoriasDeCartaSeleccionadas = this._subcategoriasDeCarta;
-            ObtenerOpcionesParaOrdenar();
-        }
 
         public void ObtenerOpcionesParaOrdenar()
         {
@@ -183,41 +168,45 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 
         public void AgruparProductos()
         {
-            List<List<String>> productosCategorias = new List<List<string>>(20);
-            List<List<String>> productosSubcategorias = new List<List<string>>(20);
+            List<List<String>> productosCategorias = new List<List<String>>();
+            List<List<String>> productosSubcategorias = new List<List<String>>();
 
-            foreach (var categoria in _categoriasDeCartaSeleccionadas)
+            for (int i = 0; i < _categoriasDeCarta.Count; i++)
             {
                 List<String> productosDeCadaCategoria = new List<string>();
+                var categoria = _categoriasDeCarta[i];
 
-                foreach (var producto in _productosPedidos)
+                for (int j = 0; j < _productosPedidos.Count; j++)
                 {
+                    var producto = _productosPedidos[j];
                     if (producto.Split('|')[0].Equals(categoria))
                     {
                         productosDeCadaCategoria.Add(producto);
                     }
-
                 }
+
                 productosCategorias.Add(productosDeCadaCategoria);
             }
 
-            //this._productosDeCategorias = productosCategorias;
+            this._productosDeCategorias = productosCategorias;
 
-            foreach (var subcategoria in _subcategoriasDeCartaSeleccionadas)
+
+            for (int i = 0; i < _subcategoriasDeCarta.Count; i++)
             {
                 List<String> productosDeCadaSubcategoria = new List<string>();
-                foreach (var producto in _productosPedidos)
+                var subcategoria = _subcategoriasDeCarta[i];
+
+                for (int j = 0; j < _productosPedidos.Count; j++)
                 {
-                    if (producto.Split('|')[0].Equals(subcategoria))
+                    var producto = _productosPedidos[j];
+                    if (producto.Split('|')[1].Equals(subcategoria.Split('|')[1]))
                     {
-                        productosDeCadaSubcategoria.Add(producto);
+                       productosDeCadaSubcategoria.Add(producto);
                     }
-
                 }
-                productosCategorias.Add(productosDeCadaSubcategoria);
+                productosSubcategorias.Add(productosDeCadaSubcategoria);
             }
-
-            //this._productosDeSubcategorias = productosSubcategorias;
+            this._productosDeSubcategorias = productosSubcategorias;
         }
 
 
@@ -258,13 +247,11 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 
             for (int i = 0; i < _subcategoriasDeCarta.Count; i++)
             {
-                foreach (var producto in _productosPedidos)
+                for (int j = 0; j < _productosDeSubcategorias[i].Count; j++)
                 {
-                    if (producto.Split('|')[1].Equals(_subcategoriasDeCarta[i].Split('|')[1]))
-                    {
-                        var old = total[i];
-                        total[i] = old + Int32.Parse(producto.Split('|')[3]);
-                    }
+                    var producto = _productosDeSubcategorias[i][j];
+                    var old = total[i];
+                    total[i] = old + Int32.Parse(producto.Split('|')[3]);
                 }
             }
             _totalesPorSubcategorias = total.ToList();
@@ -277,13 +264,11 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 
             for (int i = 0; i < _categoriasDeCarta.Count; i++)
             {
-                foreach (var producto in _productosPedidos)
+                for (int j = 0; j < _productosDeCategorias[i].Count; j++)
                 {
-                    if (producto.Split('|')[0].Equals(_categoriasDeCarta[i]))
-                    {
-                        var old = total[i];
-                        total[i] = old + Int32.Parse(producto.Split('|')[3]);
-                    }
+                    var producto = _productosDeCategorias[i][j];
+                    var old = total[i];
+                    total[i] = old + Int32.Parse(producto.Split('|')[3]);
                 }
             }
             _totalesPorCategorias = total.ToList();
@@ -369,6 +354,7 @@ namespace Implementacion_PPAI.Clases.No_Persistente
         {
             IConstructorInformeProductosMasPedidos constructor = new ConstructorProductosMasPedidosPantalla();
             DirectorConstructorInforme director = new DirectorConstructorInforme(constructor);
+
             director.Construir(_fechaDesde, _fechaHasta, _categoriasDeCarta, _totalesPorCategorias, _subcategoriasDeCarta, 
                 _totalesPorSubcategorias, _nombreProductos, _totalesPorProducto,_usuario, _fechaHoraActual);
 

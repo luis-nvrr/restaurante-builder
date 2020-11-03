@@ -12,6 +12,16 @@ namespace Implementacion_PPAI.Clases.Builder
 
         }
 
+        void IConstructorInformeProductosMasPedidos.ConstruirProducto()
+        {
+            _informe = new InformeProductosMasPedidosPantalla();
+        }
+
+        void IConstructorInformeProductosMasPedidos.ConstruirEncabezado(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            _informe.SetEncabezado(fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
+        }
+
         void IConstructorInformeProductosMasPedidos.ConstruirCuerpo(List<string> categorias, List<int> totalCategorias, List<string> subcategorias,
             List<int> totalSubcategorias, List<string> productos, List<int> totalProductos)
         {
@@ -43,19 +53,9 @@ namespace Implementacion_PPAI.Clases.Builder
             }
         }
 
-        void IConstructorInformeProductosMasPedidos.ConstruirEncabezado(DateTime fechaDesde, DateTime fechaHasta)
-        {
-            _informe.SetEncabezado(fechaDesde.ToString(), fechaHasta.ToString());
-        }
-
         void IConstructorInformeProductosMasPedidos.ConstruirPie(string usuario, DateTime fechaHora)
         {
             _informe.SetPie(usuario, fechaHora.ToString());
-        }
-
-        void IConstructorInformeProductosMasPedidos.ConstruirProducto()
-        {
-            _informe = new InformeProductosMasPedidosPantalla();
         }
 
         object IConstructorInformeProductosMasPedidos.ObtenerProducto()

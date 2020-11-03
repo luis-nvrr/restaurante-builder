@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.listaSubCategorias = new System.Windows.Forms.CheckedListBox();
-            this.btnSeleccionarSubCategorias = new System.Windows.Forms.Button();
             this.listaCategorias = new System.Windows.Forms.CheckedListBox();
             this.btnGenerarReporte = new System.Windows.Forms.Button();
             this.pnlSeleccionOpcion = new System.Windows.Forms.Panel();
@@ -55,7 +54,6 @@
             this.btnSeleccionarPeriodo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnSeleccionarCategorias = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -89,21 +87,6 @@
             this.listaSubCategorias.Name = "listaSubCategorias";
             this.listaSubCategorias.Size = new System.Drawing.Size(471, 224);
             this.listaSubCategorias.TabIndex = 11;
-            // 
-            // btnSeleccionarSubCategorias
-            // 
-            this.btnSeleccionarSubCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(50)))), ((int)(((byte)(68)))));
-            this.btnSeleccionarSubCategorias.FlatAppearance.BorderSize = 0;
-            this.btnSeleccionarSubCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionarSubCategorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSeleccionarSubCategorias.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSeleccionarSubCategorias.Location = new System.Drawing.Point(401, 310);
-            this.btnSeleccionarSubCategorias.Name = "btnSeleccionarSubCategorias";
-            this.btnSeleccionarSubCategorias.Size = new System.Drawing.Size(118, 29);
-            this.btnSeleccionarSubCategorias.TabIndex = 10;
-            this.btnSeleccionarSubCategorias.Text = "Seleccionar";
-            this.btnSeleccionarSubCategorias.UseVisualStyleBackColor = false;
-            this.btnSeleccionarSubCategorias.Click += new System.EventHandler(this.btnSeleccionarSubCategorias_Click);
             // 
             // listaCategorias
             // 
@@ -343,6 +326,7 @@
             this.lblErrorPeriodo.Enabled = false;
             this.lblErrorPeriodo.FlatAppearance.BorderSize = 0;
             this.lblErrorPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblErrorPeriodo.Image = global::Implementacion_PPAI.Properties.Resources.remove;
             this.lblErrorPeriodo.Location = new System.Drawing.Point(304, 89);
             this.lblErrorPeriodo.Name = "lblErrorPeriodo";
             this.lblErrorPeriodo.Size = new System.Drawing.Size(195, 45);
@@ -380,7 +364,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.btnSeleccionarCategorias);
             this.groupBox2.Controls.Add(this.listaCategorias);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(3, 246);
@@ -400,26 +383,10 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Seleccione las categorias:";
             // 
-            // btnSeleccionarCategorias
-            // 
-            this.btnSeleccionarCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(50)))), ((int)(((byte)(68)))));
-            this.btnSeleccionarCategorias.FlatAppearance.BorderSize = 0;
-            this.btnSeleccionarCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionarCategorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSeleccionarCategorias.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSeleccionarCategorias.Location = new System.Drawing.Point(410, 310);
-            this.btnSeleccionarCategorias.Name = "btnSeleccionarCategorias";
-            this.btnSeleccionarCategorias.Size = new System.Drawing.Size(118, 29);
-            this.btnSeleccionarCategorias.TabIndex = 8;
-            this.btnSeleccionarCategorias.Text = "Seleccionar";
-            this.btnSeleccionarCategorias.UseVisualStyleBackColor = false;
-            this.btnSeleccionarCategorias.Click += new System.EventHandler(this.btnSeleccionarCategorias_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.listaSubCategorias);
-            this.groupBox3.Controls.Add(this.btnSeleccionarSubCategorias);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(609, 246);
             this.groupBox3.Name = "groupBox3";
@@ -592,7 +559,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSeleccionarSubCategorias;
         private System.Windows.Forms.RadioButton opcionDescendente;
         private System.Windows.Forms.RadioButton opcionAscendente;
         private System.Windows.Forms.Button btnSeleccionarOpcion;
@@ -608,7 +574,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSeleccionarPeriodo;
-        private System.Windows.Forms.Button btnSeleccionarCategorias;
         public System.Windows.Forms.CheckedListBox listaCategorias;
         public System.Windows.Forms.CheckedListBox listaSubCategorias;
         private System.Windows.Forms.Label label5;
