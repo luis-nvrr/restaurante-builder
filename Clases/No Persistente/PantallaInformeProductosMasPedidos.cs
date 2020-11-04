@@ -7,20 +7,20 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 {
     public partial class PantallaInformeProductosMasPedidos : Form
     {
-        public static readonly int Descendente = 0;
-        public static readonly int Ascendente = 1;
+        // opciones de ordenamiento
+        private static readonly int Descendente = 0;
+        private static readonly int Ascendente = 1;
+
+        // formas de visualizacion
+        private static readonly int Pantalla = 0;
+        private static readonly int PDF = 1;
+        private static readonly int Excel = 2;
 
         private GestorInformeProductosMasPedidos _gestor;
-        private List<String>  _categoriasDeCartaSeleccionadas;
-        private List<String> _subcategoriasDeCartaSeleccionadas;
 
 
         public PantallaInformeProductosMasPedidos()
         {
-            this._gestor = new GestorInformeProductosMasPedidos(this);
-            _categoriasDeCartaSeleccionadas = new List<String>();
-            _subcategoriasDeCartaSeleccionadas = new List<String>();
-
             InitializeComponent();
         }
 
@@ -32,6 +32,7 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
+            this._gestor = new GestorInformeProductosMasPedidos(this);
             this.HabilitarPantalla();
             _gestor.NuevoInformeProducto();
         }
@@ -53,16 +54,23 @@ namespace Implementacion_PPAI.Clases.No_Persistente
         {
             lblErrorPeriodo.Visible = true;
             lblErrorPeriodo.Enabled = true;
+            lblCorrecto.Visible = false;
+            lblCorrecto.Enabled = false;
+            listaCategorias.Items.Clear();
+            listaSubCategorias.Items.Clear();
+        }
+
+        public void MostrarValidacionCorrecta()
+        {
+            lblErrorPeriodo.Visible = false;
+            lblErrorPeriodo.Enabled = false;
+            lblCorrecto.Visible = true;
+            lblCorrecto.Enabled = true;
+
         }
 
         public void MostrarCategoriasDeCartaParaSeleccionar(List<String> categorias)
         {
-            lblErrorPeriodo.Visible = false;
-            lblErrorPeriodo.Enabled = false;
-            pckFechaDesde.Enabled = false;
-            pckFechaHasta.Enabled = false;
-            btnSeleccionarPeriodo.Enabled = false;
-
             listaSubCategorias.Items.Clear();
             listaCategorias.Items.Clear();
 
@@ -107,7 +115,7 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 
         public void SolicitarConfirmacion()
         {
-            if (MessageBox.Show("¿Seguro que desea confirmar?", "Importante", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro que desea confirmar?", "Importante", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 _gestor.TomarConfirmacion();
             }
@@ -116,7 +124,7 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea cancelar?", "Importante", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro que desea cancelar?", "Importante", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -146,6 +154,8 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             opcionExcel.Checked = false;
             opcionPDF.Checked = false;
             opcionPantalla.Checked = false;
+            lblErrorPeriodo.Visible = false;
+            lblCorrecto.Visible = false;
         }
 
         public void SolicitarSeleccionFormasVisualizacion()
@@ -158,19 +168,29 @@ namespace Implementacion_PPAI.Clases.No_Persistente
         {
             if (opcionPantalla.Checked)
             {
-                _gestor.TomarFormaVisualizacion(opcionPantalla.Text.ToLower());
+                _gestor.TomarFormaVisualizacion(Pantalla);
             }
 
             if(opcionPDF.Checked)
             {
-                _gestor.TomarFormaVisualizacion(opcionPDF.Text.ToLower());
+                _gestor.TomarFormaVisualizacion(PDF);
             }
 
             if (opcionExcel.Checked)
             {
-                _gestor.TomarFormaVisualizacion(opcionExcel.Text.ToLower());
+                _gestor.TomarFormaVisualizacion(Excel);
             }
         }
 
+
+        public void EmitirErrorVisualizacion()
+        {
+            MessageBox.Show("Opción no disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void listaCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

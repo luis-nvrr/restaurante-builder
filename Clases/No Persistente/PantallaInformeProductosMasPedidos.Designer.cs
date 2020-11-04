@@ -49,6 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCorrecto = new System.Windows.Forms.Button();
             this.lblErrorPeriodo = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSeleccionarPeriodo = new System.Windows.Forms.Button();
@@ -83,7 +84,7 @@
             this.listaSubCategorias.CheckOnClick = true;
             this.listaSubCategorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaSubCategorias.FormattingEnabled = true;
-            this.listaSubCategorias.Location = new System.Drawing.Point(48, 80);
+            this.listaSubCategorias.Location = new System.Drawing.Point(68, 80);
             this.listaSubCategorias.Name = "listaSubCategorias";
             this.listaSubCategorias.Size = new System.Drawing.Size(471, 224);
             this.listaSubCategorias.TabIndex = 11;
@@ -93,10 +94,11 @@
             this.listaCategorias.CheckOnClick = true;
             this.listaCategorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaCategorias.FormattingEnabled = true;
-            this.listaCategorias.Location = new System.Drawing.Point(57, 80);
+            this.listaCategorias.Location = new System.Drawing.Point(68, 80);
             this.listaCategorias.Name = "listaCategorias";
             this.listaCategorias.Size = new System.Drawing.Size(471, 224);
             this.listaCategorias.TabIndex = 9;
+            this.listaCategorias.SelectedIndexChanged += new System.EventHandler(this.listaCategorias_SelectedIndexChanged);
             // 
             // btnGenerarReporte
             // 
@@ -153,7 +155,7 @@
             this.btnSeleccionarOpcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarOpcion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.btnSeleccionarOpcion.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSeleccionarOpcion.Location = new System.Drawing.Point(261, 95);
+            this.btnSeleccionarOpcion.Location = new System.Drawing.Point(81, 135);
             this.btnSeleccionarOpcion.Name = "btnSeleccionarOpcion";
             this.btnSeleccionarOpcion.Size = new System.Drawing.Size(118, 29);
             this.btnSeleccionarOpcion.TabIndex = 10;
@@ -225,7 +227,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 25F);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(81, 22);
+            this.label1.Location = new System.Drawing.Point(67, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 40);
             this.label1.TabIndex = 0;
@@ -291,7 +293,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(78)))), ((int)(((byte)(101)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(105)))), ((int)(((byte)(128)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
@@ -306,6 +308,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCorrecto);
             this.groupBox1.Controls.Add(this.lblErrorPeriodo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnSeleccionarPeriodo);
@@ -319,14 +322,29 @@
             this.groupBox1.Size = new System.Drawing.Size(600, 172);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Periodo";
+            this.groupBox1.Text = "Período";
+            // 
+            // lblCorrecto
+            // 
+            this.lblCorrecto.Enabled = false;
+            this.lblCorrecto.FlatAppearance.BorderSize = 0;
+            this.lblCorrecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCorrecto.Image = global::Implementacion_PPAI.Properties.Resources.check;
+            this.lblCorrecto.Location = new System.Drawing.Point(304, 89);
+            this.lblCorrecto.Name = "lblCorrecto";
+            this.lblCorrecto.Size = new System.Drawing.Size(195, 45);
+            this.lblCorrecto.TabIndex = 14;
+            this.lblCorrecto.Text = "¡Correcto!";
+            this.lblCorrecto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.lblCorrecto.UseVisualStyleBackColor = true;
+            this.lblCorrecto.Visible = false;
             // 
             // lblErrorPeriodo
             // 
             this.lblErrorPeriodo.Enabled = false;
             this.lblErrorPeriodo.FlatAppearance.BorderSize = 0;
             this.lblErrorPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblErrorPeriodo.Image = global::Implementacion_PPAI.Properties.Resources.remove;
+            this.lblErrorPeriodo.Image = global::Implementacion_PPAI.Properties.Resources.error;
             this.lblErrorPeriodo.Location = new System.Drawing.Point(304, 89);
             this.lblErrorPeriodo.Name = "lblErrorPeriodo";
             this.lblErrorPeriodo.Size = new System.Drawing.Size(195, 45);
@@ -371,7 +389,7 @@
             this.groupBox2.Size = new System.Drawing.Size(600, 360);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Categorias";
+            this.groupBox2.Text = "Categorías";
             // 
             // label7
             // 
@@ -393,7 +411,7 @@
             this.groupBox3.Size = new System.Drawing.Size(600, 360);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Subcategorias";
+            this.groupBox3.Text = "Subcategorías";
             // 
             // label8
             // 
@@ -413,7 +431,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(3, 612);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(600, 170);
+            this.groupBox4.Size = new System.Drawing.Size(600, 210);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ordenamiento";
@@ -426,7 +444,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(146, 19);
             this.label9.TabIndex = 12;
-            this.label9.Text = "Ingrese una opcion:";
+            this.label9.Text = "Ingrese una opción:";
             // 
             // groupBox6
             // 
@@ -436,10 +454,10 @@
             this.groupBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(609, 612);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(600, 170);
+            this.groupBox6.Size = new System.Drawing.Size(600, 210);
             this.groupBox6.TabIndex = 16;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Visualizacion";
+            this.groupBox6.Text = "Visualización";
             // 
             // pnlSeleccionVisualizacion
             // 
@@ -495,7 +513,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(279, 19);
             this.label10.TabIndex = 12;
-            this.label10.Text = "Seleccione una forma de visualizacion:";
+            this.label10.Text = "Seleccione una forma de visualización:";
             // 
             // btnSeleccionarVisualizacion
             // 
@@ -504,7 +522,7 @@
             this.btnSeleccionarVisualizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarVisualizacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.btnSeleccionarVisualizacion.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSeleccionarVisualizacion.Location = new System.Drawing.Point(189, 132);
+            this.btnSeleccionarVisualizacion.Location = new System.Drawing.Point(65, 167);
             this.btnSeleccionarVisualizacion.Name = "btnSeleccionarVisualizacion";
             this.btnSeleccionarVisualizacion.Size = new System.Drawing.Size(118, 29);
             this.btnSeleccionarVisualizacion.TabIndex = 10;
@@ -589,5 +607,6 @@
         private System.Windows.Forms.RadioButton opcionPantalla;
         private System.Windows.Forms.RadioButton opcionPDF;
         private System.Windows.Forms.Button lblErrorPeriodo;
+        private System.Windows.Forms.Button lblCorrecto;
     }
 }

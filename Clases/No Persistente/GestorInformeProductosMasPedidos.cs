@@ -9,8 +9,15 @@ namespace Implementacion_PPAI.Clases.No_Persistente
 {
     class GestorInformeProductosMasPedidos
     {
-        public static readonly int Descendente = 0;
-        public static readonly int Ascendente = 1;
+        // opciones de ordenamiento
+        private static readonly int Descendente = 0;
+        private static readonly int Ascendente = 1;
+
+        // formas de visualizacion
+        private static readonly int Pantalla = 0;
+        private static readonly int PDF = 1;
+        private static readonly int Excel = 2;
+
         private int _opcionSeleccionada;
 
         private PantallaInformeProductosMasPedidos _pantalla;
@@ -67,7 +74,8 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             {
                 this._fechaDesde = fechaDesde;
                 this._fechaHasta = fechaHasta;
-
+                
+                _pantalla.MostrarValidacionCorrecta();
                 this.BuscarCategoriasDeCartaVigentesEnPeriodo();
                 this.BuscarSubCategoriasDeCategoriasSeleccionadas();
                 this.ObtenerOpcionesParaOrdenar();
@@ -332,15 +340,19 @@ namespace Implementacion_PPAI.Clases.No_Persistente
             _pantalla.SolicitarSeleccionFormasVisualizacion();
         }
 
-        public void TomarFormaVisualizacion(String formaVisualizacion)
+        public void TomarFormaVisualizacion(int formaVisualizacion)
         {
-            if (formaVisualizacion.Equals("por pantalla"))
+            if (formaVisualizacion.Equals(Pantalla))
             {
                 TomarFechaHoraActual();
                 BuscarUsuarioLogueado();
                 GenerarReportePantalla();
             }
-           
+
+            if (formaVisualizacion.Equals(PDF) || formaVisualizacion.Equals(Excel))
+            {
+                _pantalla.EmitirErrorVisualizacion();
+            }
         }
 
         public void BuscarUsuarioLogueado()
