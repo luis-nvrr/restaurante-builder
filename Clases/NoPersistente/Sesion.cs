@@ -1,7 +1,7 @@
 ﻿using System;
 using Implementacion_PPAI.Clases.Dominio;
 
-namespace Implementacion_PPAI.Clases.No_Persistente
+namespace Implementacion_PPAI.Clases.NoPersistente
 {
     class Sesion
     {

@@ -46,19 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Builder\ConstructorProductosMasPedidosExcel.cs" />
-    <Compile Include="Clases\Builder\ConstructorProductosMasPedidosPantalla.cs" />
-    <Compile Include="Clases\Builder\ConstructorProductosMasPedidosPDF.cs" />
-    <Compile Include="Clases\Builder\DirectorConstructorInforme.cs" />
-    <Compile Include="Clases\Builder\IConstructorInformeProductosMasPedidos.cs" />
-    <Compile Include="Clases\Builder\InformeProductosMasPedidoseExcel.cs" />
-    <Compile Include="Clases\Builder\InformeProductosMasPedidosPantalla.cs">
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\ConstructorProductosMasPedidosExcel.cs" />
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\ConstructorProductosMasPedidosPantalla.cs" />
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\ConstructorProductosMasPedidosPDF.cs" />
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\DirectorConstructorInforme.cs" />
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\IConstructorInformeProductosMasPedidos.cs" />
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\InformeProductosMasPedidoseExcel.cs" />
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\InformeProductosMasPedidosPantalla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clases\Builder\InformeProductosMasPedidosPantalla.Designer.cs">
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\InformeProductosMasPedidosPantalla.Designer.cs">
       <DependentUpon>InformeProductosMasPedidosPantalla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases\Builder\InformeProductosMasPedidosPDF.cs" />
+    <Compile Include="Clases\BuilderInformeProductosMasPedidos\InformeProductosMasPedidosPDF.cs" />
     <Compile Include="Clases\Datos\Datos.cs" />
     <Compile Include="Clases\Dominio\Carta.cs" />
     <Compile Include="Clases\Dominio\Categoria.cs" />
@@ -70,23 +70,23 @@
     <Compile Include="Clases\Dominio\SubCategoria.cs" />
     <Compile Include="Clases\Dominio\SubCategoriaDeCarta.cs" />
     <Compile Include="Clases\Dominio\Usuario.cs" />
-    <Compile Include="Clases\No Persistente\GestorInformeProductosMasPedidos.cs" />
-    <Compile Include="Clases\No Persistente\PantallaInformeProductosMasPedidos.cs">
+    <Compile Include="Clases\NoPersistente\GestorInformeProductosMasPedidos.cs" />
+    <Compile Include="Clases\NoPersistente\PantallaInformeProductosMasPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clases\No Persistente\PantallaInformeProductosMasPedidos.Designer.cs">
+    <Compile Include="Clases\NoPersistente\PantallaInformeProductosMasPedidos.Designer.cs">
       <DependentUpon>PantallaInformeProductosMasPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases\No Persistente\Sesion.cs" />
-    <Compile Include="Clases\Strategy\IEstrategiaOrdenamiento.cs" />
-    <Compile Include="Clases\Strategy\OrdenamientoAscendente.cs" />
-    <Compile Include="Clases\Strategy\OrdenamientoDescendente.cs" />
+    <Compile Include="Clases\NoPersistente\Sesion.cs" />
+    <Compile Include="Clases\StrategyOrdenamiento\IEstrategiaOrdenamiento.cs" />
+    <Compile Include="Clases\StrategyOrdenamiento\OrdenamientoAscendente.cs" />
+    <Compile Include="Clases\StrategyOrdenamiento\OrdenamientoDescendente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Clases\Builder\InformeProductosMasPedidosPantalla.resx">
+    <EmbeddedResource Include="Clases\BuilderInformeProductosMasPedidos\InformeProductosMasPedidosPantalla.resx">
       <DependentUpon>InformeProductosMasPedidosPantalla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clases\No Persistente\PantallaInformeProductosMasPedidos.resx">
+    <EmbeddedResource Include="Clases\NoPersistente\PantallaInformeProductosMasPedidos.resx">
       <DependentUpon>PantallaInformeProductosMasPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

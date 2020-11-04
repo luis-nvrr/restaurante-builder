@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Implementacion_PPAI.Clases.No_Persistente;
+using Implementacion_PPAI.Clases.NoPersistente;
 
-namespace Implementacion_PPAI.Clases.Strategy
+namespace Implementacion_PPAI.Clases.StrategyOrdenamiento
 {
     interface IEstrategiaOrdenamiento
     {

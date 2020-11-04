@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
-namespace Implementacion_PPAI.Clases.No_Persistente
+namespace Implementacion_PPAI.Clases.NoPersistente
 {
     public partial class PantallaInformeProductosMasPedidos : Form
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Implementacion_PPAI.Clases.No_Persistente;
+using Implementacion_PPAI.Clases.NoPersistente;
 
 namespace Implementacion_PPAI
 {

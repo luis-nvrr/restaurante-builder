@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Implementacion_PPAI.Clases.Builder
+namespace Implementacion_PPAI.Clases.BuilderInformeProductosMasPedidos
 { 
     interface IConstructorInformeProductosMasPedidos
     {

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
 using Implementacion_PPAI.Clases.Dominio;
-using Implementacion_PPAI.Clases.No_Persistente;
+using Implementacion_PPAI.Clases.NoPersistente;
 
 namespace Implementacion_PPAI.Clases.Datos
 {

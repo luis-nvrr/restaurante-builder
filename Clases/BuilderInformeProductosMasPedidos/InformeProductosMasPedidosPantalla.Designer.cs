@@ -1,4 +1,4 @@
-﻿namespace Implementacion_PPAI.Clases.Builder
+﻿namespace Implementacion_PPAI.Clases.BuilderInformeProductosMasPedidos
 {
     partial class InformeProductosMasPedidosPantalla
     {

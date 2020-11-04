@@ -1,4 +1,4 @@
-﻿namespace Implementacion_PPAI.Clases.No_Persistente
+﻿namespace Implementacion_PPAI.Clases.NoPersistente
 {
     partial class PantallaInformeProductosMasPedidos
     {

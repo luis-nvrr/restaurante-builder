@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Implementacion_PPAI.Clases.Builder;
+using Implementacion_PPAI.Clases.BuilderInformeProductosMasPedidos;
 using Implementacion_PPAI.Clases.Dominio;
-using Implementacion_PPAI.Clases.Strategy;
+using Implementacion_PPAI.Clases.StrategyOrdenamiento;
 
-namespace Implementacion_PPAI.Clases.No_Persistente
+namespace Implementacion_PPAI.Clases.NoPersistente
 {
     class GestorInformeProductosMasPedidos
     {

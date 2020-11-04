@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Implementacion_PPAI.Clases.Builder
+namespace Implementacion_PPAI.Clases.BuilderInformeProductosMasPedidos
 {
     public partial class InformeProductosMasPedidosPantalla : Form
     {
