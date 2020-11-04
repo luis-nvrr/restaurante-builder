@@ -155,7 +155,7 @@
             this.btnSeleccionarOpcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarOpcion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.btnSeleccionarOpcion.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSeleccionarOpcion.Location = new System.Drawing.Point(81, 135);
+            this.btnSeleccionarOpcion.Location = new System.Drawing.Point(80, 132);
             this.btnSeleccionarOpcion.Name = "btnSeleccionarOpcion";
             this.btnSeleccionarOpcion.Size = new System.Drawing.Size(118, 29);
             this.btnSeleccionarOpcion.TabIndex = 10;
@@ -464,7 +464,7 @@
             this.pnlSeleccionVisualizacion.Controls.Add(this.opcionExcel);
             this.pnlSeleccionVisualizacion.Controls.Add(this.opcionPantalla);
             this.pnlSeleccionVisualizacion.Controls.Add(this.opcionPDF);
-            this.pnlSeleccionVisualizacion.Location = new System.Drawing.Point(48, 59);
+            this.pnlSeleccionVisualizacion.Location = new System.Drawing.Point(68, 59);
             this.pnlSeleccionVisualizacion.Name = "pnlSeleccionVisualizacion";
             this.pnlSeleccionVisualizacion.Size = new System.Drawing.Size(135, 102);
             this.pnlSeleccionVisualizacion.TabIndex = 15;
@@ -522,7 +522,7 @@
             this.btnSeleccionarVisualizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarVisualizacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.btnSeleccionarVisualizacion.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSeleccionarVisualizacion.Location = new System.Drawing.Point(65, 167);
+            this.btnSeleccionarVisualizacion.Location = new System.Drawing.Point(85, 167);
             this.btnSeleccionarVisualizacion.Name = "btnSeleccionarVisualizacion";
             this.btnSeleccionarVisualizacion.Size = new System.Drawing.Size(118, 29);
             this.btnSeleccionarVisualizacion.TabIndex = 10;
