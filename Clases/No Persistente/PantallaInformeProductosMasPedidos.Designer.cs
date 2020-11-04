@@ -279,7 +279,7 @@
             this.groupBox5.Size = new System.Drawing.Size(600, 172);
             this.groupBox5.TabIndex = 15;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Informe";
+            this.groupBox5.Text = "1.Informe";
             // 
             // label5
             // 
@@ -322,7 +322,7 @@
             this.groupBox1.Size = new System.Drawing.Size(600, 172);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Período";
+            this.groupBox1.Text = "2.Período";
             // 
             // lblCorrecto
             // 
@@ -389,7 +389,7 @@
             this.groupBox2.Size = new System.Drawing.Size(600, 360);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Categorías";
+            this.groupBox2.Text = "3.Categorías";
             // 
             // label7
             // 
@@ -411,7 +411,7 @@
             this.groupBox3.Size = new System.Drawing.Size(600, 360);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Subcategorías";
+            this.groupBox3.Text = "4.Subcategorías";
             // 
             // label8
             // 
@@ -434,7 +434,7 @@
             this.groupBox4.Size = new System.Drawing.Size(600, 210);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Ordenamiento";
+            this.groupBox4.Text = "5.Ordenamiento";
             // 
             // label9
             // 
@@ -457,7 +457,7 @@
             this.groupBox6.Size = new System.Drawing.Size(600, 210);
             this.groupBox6.TabIndex = 16;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Visualización";
+            this.groupBox6.Text = "6.Visualización";
             // 
             // pnlSeleccionVisualizacion
             // 
