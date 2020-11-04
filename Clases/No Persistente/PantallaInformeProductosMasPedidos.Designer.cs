@@ -285,7 +285,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label5.Location = new System.Drawing.Point(10, 23);
+            this.label5.Location = new System.Drawing.Point(7, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 19);
             this.label5.TabIndex = 12;
@@ -358,7 +358,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label6.Location = new System.Drawing.Point(15, 23);
+            this.label6.Location = new System.Drawing.Point(7, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(141, 19);
             this.label6.TabIndex = 12;
@@ -395,11 +395,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label7.Location = new System.Drawing.Point(10, 34);
+            this.label7.Location = new System.Drawing.Point(7, 34);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(188, 19);
+            this.label7.Size = new System.Drawing.Size(255, 19);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Seleccione las categorias:";
+            this.label7.Text = "Seleccione una o varias categorias:";
             // 
             // groupBox3
             // 
@@ -417,11 +417,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label8.Location = new System.Drawing.Point(15, 34);
+            this.label8.Location = new System.Drawing.Point(8, 34);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(212, 19);
+            this.label8.Size = new System.Drawing.Size(279, 19);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Seleccione las subcategorias:";
+            this.label8.Text = "Seleccione una o varias subcategorias:";
             // 
             // groupBox4
             // 
@@ -509,7 +509,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label10.Location = new System.Drawing.Point(6, 33);
+            this.label10.Location = new System.Drawing.Point(7, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(279, 19);
             this.label10.TabIndex = 12;
